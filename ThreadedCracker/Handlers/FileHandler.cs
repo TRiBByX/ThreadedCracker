@@ -11,7 +11,7 @@ namespace ThreadedCracker.Handlers
         public static List<UserData> Passwords = new List<UserData>();
 
 
-        private const int MaxChunckSize = 50000;
+        private const int MaxChunckSize = 60000;
 
         public static void LoadDictionary()
         {
@@ -29,25 +29,9 @@ namespace ThreadedCracker.Handlers
                             chunk = new List<string>();
                         }
                     }
+                    Dictionaries.Add(chunk);
                 }
             }
-
-//            using (FileStream fs = new FileStream("webster-dictionary.txt", FileMode.Open, FileAccess.Read))
-//            using (StreamReader r = new StreamReader(fs)
-//            {
-//                int n = 0;
-//                while (!r.EndOfStream)
-//                {
-//                    var chunk = new List<string>();
-//                    chunk.Add(r.ReadLine());
-//                    if (n++ % MaxChunckSize == 0)
-//                    {
-//                        Dictionaries.Add(chunk);
-//                        chunk = new List<string>();
-//                        n = 0;
-//                    }
-//                }
-//            }
         }
 
         /// <summary>

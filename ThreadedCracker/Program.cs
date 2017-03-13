@@ -19,6 +19,8 @@ namespace ThreadedCracker
             var pass = FileHandler.Passwords;
             var dict = FileHandler.Dictionaries;
 
+//            Console.WriteLine(dict[6].Count);
+
             List<ThreadStart> threads = new List<ThreadStart>();
             for (int i = 0; i < dict.Count; i++)
             {
