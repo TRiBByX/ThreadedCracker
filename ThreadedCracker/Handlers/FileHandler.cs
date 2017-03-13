@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using ThreadedCracker.Model;
@@ -51,6 +51,15 @@ namespace ThreadedCracker.Handlers
                     UserData usrinf = new UserData(parts[0], parts[1]);
                     Passwords.Add(usrinf);
                 }
+            }
+        }
+
+        public static void SaveCrackedPasswords()
+        {
+            FileStream fs = new FileStream("CrackedPasswords.txt", FileMode.Create, FileAccess.Write);
+            using (StreamWriter sw = new StreamWriter(fs))
+            {
+                
             }
         }
 

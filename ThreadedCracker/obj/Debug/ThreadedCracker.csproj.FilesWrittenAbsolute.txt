@@ -3,3 +3,8 @@
 /Users/TRiBByX/RiderProjects/ThreadedCracker/ThreadedCracker/bin/Debug/ThreadedCracker.exe
 /Users/TRiBByX/RiderProjects/ThreadedCracker/ThreadedCracker/obj/Debug/ThreadedCracker.exe
 /Users/TRiBByX/RiderProjects/ThreadedCracker/ThreadedCracker/obj/Debug/ThreadedCracker.exe.mdb
+/home/theippo1000/Programming/Repos/ThreadedCracker/ThreadedCracker/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/theippo1000/Programming/Repos/ThreadedCracker/ThreadedCracker/bin/Debug/ThreadedCracker.exe.mdb
+/home/theippo1000/Programming/Repos/ThreadedCracker/ThreadedCracker/bin/Debug/ThreadedCracker.exe
+/home/theippo1000/Programming/Repos/ThreadedCracker/ThreadedCracker/obj/Debug/ThreadedCracker.exe
+/home/theippo1000/Programming/Repos/ThreadedCracker/ThreadedCracker/obj/Debug/ThreadedCracker.exe.mdb
