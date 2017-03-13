@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
 using ThreadedCracker.Handlers;
 
 namespace ThreadedCracker
@@ -16,13 +19,19 @@ namespace ThreadedCracker
             var pass = FileHandler.Passwords;
             var dict = FileHandler.Dictionaries;
 
+            List<ThreadStart> threads = new List<ThreadStart>();
             for (int i = 0; i < dict.Count; i++)
             {
-                for (int j = 0; j < dict[i].Count; j++)
-                {
-                    CrackingHandler.RunCracking(pass, dict[i]);
-                }
+                threads.Add(new ThreadStart( () => CrackingHandler.RunCracking(pass, dict[i]) ));
+                new Thread(threads[i]).Start();
+                Console.WriteLine($"Thread: {i}, has been started");
             }
+        }
+
+        public static string TimeCalculation(DateTime start, DateTime end)
+        {
+            TimeSpan elapsedTime = end - start;
+            return $"Time taken: {elapsedTime}";
         }
     }
 }
