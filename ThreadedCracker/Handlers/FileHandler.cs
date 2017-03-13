@@ -11,7 +11,7 @@ namespace ThreadedCracker.Handlers
         public static List<UserData> Passwords = new List<UserData>();
 
 
-        private const int MaxChunckSize = 60000;
+        private const int MaxChunckSize = 6000;
 
         public static void LoadDictionary()
         {
