@@ -29,11 +29,5 @@ namespace ThreadedCracker
                 Console.WriteLine($"Thread: {i}, has been started");
             }
         }
-
-        public static string TimeCalculation(DateTime start, DateTime end)
-        {
-            TimeSpan elapsedTime = end - start;
-            return $"Time taken: {elapsedTime}";
-        }
     }
 }
