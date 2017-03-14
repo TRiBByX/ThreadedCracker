@@ -10,8 +10,12 @@ namespace ThreadedCracker.Handlers
         public static Collection<List<string>> Dictionaries = new Collection<List<string>>();
         public static List<UserData> Passwords = new List<UserData>();
 
-
-        private const int MaxChunckSize = 50000;
+        //Christoffer: 45000 = 04:01
+        //Christoffer: 50000 = 02:49
+        //Christoffer: 51000 = 02:34
+        //Christoffer: 51500 = 02:35
+        //Christoffer: 51400 = 02:38
+        private const int MaxChunckSize = 51000;
 
         public static void LoadDictionary()
         {

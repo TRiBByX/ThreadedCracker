@@ -11,20 +11,11 @@ namespace ThreadedCracker.Handlers
 
         public static void RunCracking(List<UserData> passwords, List<string> dictionary)
         {
-            var start = DateTime.Now;
             for (int i = 0; i < dictionary.Count; i++)
             {
                 string word = dictionary[i];
                 List<UserDataCleatTxt> partialResult = StringHandler.WordController(word, passwords);
             }
-            var end = DateTime.Now;
-            Console.WriteLine(TimeCalculation(start, end));
-        }
-
-        public static string TimeCalculation(DateTime start, DateTime end)
-        {
-            TimeSpan elapsedTime = end - start;
-            return $"Time taken: {elapsedTime}";
         }
     }
 }

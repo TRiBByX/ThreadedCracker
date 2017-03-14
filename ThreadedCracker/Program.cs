@@ -21,7 +21,10 @@ namespace ThreadedCracker
 
 //            Console.WriteLine(dict[6].Count);
 
-
+//            int workerThreads;
+//            int completionPortThreads;
+//            ThreadPool.GetMaxThreads(out workerThreads, out completionPortThreads);
+//            Console.WriteLine(workerThreads);
 
             List<ThreadStart> threads = new List<ThreadStart>();
             for (int i = 0; i < dict.Count; i++)
