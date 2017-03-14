@@ -21,24 +21,24 @@ namespace ThreadedCracker
 
 //            Console.WriteLine(dict[6].Count);
 
-            List<Task> tasks = new List<Task>();
-
-            for (int i = 0; i < dict.Count; i++)
-            {
-                var t = new Task(() => { CrackingHandler.RunCracking(pass, dict[i]); });
-                tasks.Add(t);
-                t.Start();
-                Console.WriteLine($"Task: {i}, has been started");
-                t.Wait();
-            }
-
-//            List<ThreadStart> threads = new List<ThreadStart>();
+//            List<Task> tasks = new List<Task>();
+//
 //            for (int i = 0; i < dict.Count; i++)
 //            {
-//                threads.Add(new ThreadStart( () => CrackingHandler.RunCracking(pass, dict[i]) ));
-//                new Thread(threads[i]).Start();
-//                Console.WriteLine($"Thread: {i}, has been started");
+//                var t = new Task(() => { CrackingHandler.RunCracking(pass, dict[i]); });
+//                tasks.Add(t);
+//                t.Start();
+//                Console.WriteLine($"Task: {i}, has been started");
+//                t.Wait();
 //            }
+
+            List<ThreadStart> threads = new List<ThreadStart>();
+            for (int i = 0; i < dict.Count; i++)
+            {
+                threads.Add(new ThreadStart( () => CrackingHandler.RunCracking(pass, dict[i]) ));
+                new Thread(threads[i]).Start();
+                Console.WriteLine($"Thread: {i}, has been started");
+            }
         }
     }
 }
