@@ -8,6 +8,13 @@ namespace ThreadedCracker.Handlers
 {
     public class StringHandler
     {
+        /// <summary>
+        /// Takes in a word alteres it and checks sends it to checksingle word
+        /// Takes a string word and a userdata object list.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <param name="userDatas"></param>
+        /// <returns></returns>
         public static List<UserDataCleatTxt> WordController(string word, List<UserData> userDatas)
         {
             List<UserDataCleatTxt> result = new List<UserDataCleatTxt>();
@@ -60,7 +67,13 @@ namespace ThreadedCracker.Handlers
             return result;
         }
 
-
+        /// <summary>
+        /// Takes in an altered word to then see if it's the same hash value as the password
+        /// Takes a list of userdata objects and a string possible password
+        /// </summary>
+        /// <param name="userInfos"></param>
+        /// <param name="possiblePassword"></param>
+        /// <returns></returns>
         private static List<UserDataCleatTxt> CheckSingleWord(List<UserData> userInfos, string possiblePassword)
         {
             var PassCount = 0;
@@ -85,7 +98,7 @@ namespace ThreadedCracker.Handlers
         }
 
         /// <summary>
-        /// Validates whether the password has been found.
+        /// Checks each byte and compares to the possbile password and the user password.
         /// </summary>
         /// <param name="firstArray"></param>
         /// <param name="secondArray"></param>
@@ -100,13 +113,19 @@ namespace ThreadedCracker.Handlers
             return true;
         }
 
+        /// <summary>
+        /// Reverses a string.
+        /// Example: 'abc' = 'cba'
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         private static string ReverseString(string s)
         {
             char[] chars = s.ToCharArray();
             Array.Reverse(chars);
             return chars.ToString();
         }
-
+        //Converts to a char array to byte array.
         private static readonly Converter<char, byte> Converter = CharToByte;
 
         private static byte CharToByte(char ch)
